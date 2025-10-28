@@ -57,10 +57,9 @@ class TrialBasedPolicyEvaluator(GeneralPolicyIterationComponent):
         N = pd.concat([N,m0], ignore_index=True)
 
         
-
         for i in range(1,self.max_trial_length): 
             s, r = self.trial_interface.exec_action(s,a)
-            moment = pd.DataFrame({"s":next_s,'a':a,'r':r})
+            #moment = pd.DataFrame({"s":next_s,'a':a,'r':r})
             N = pd.concat([N,moment], ignore_index=True)
 
 
