@@ -1,7 +1,7 @@
 from mdp._trial_interface import TrialInterface
 import numpy as np
-
-from policy_evaluation._linear import LinearSystemEvaluator
+import pandas as pd
+#from policy_evaluation._linear import LinearSystemEvaluator
 from gpi._trial_based_policy_evaluator import TrialBasedPolicyEvaluator
 from mdp._base import ClosedFormMDP
 
@@ -27,7 +27,7 @@ class ADPPolicyEvaluation(TrialBasedPolicyEvaluator):
         self.precision_for_transition_probability_estimates = precision_for_transition_probability_estimates
         self.update_interval = update_interval
     
-    def process_trial_for_policy(self, df_trial, policy):
+    def process_trial_for_policy(self, df_trial : pd.DataFrame, policy ):
         """
 
         :param df_trial: dataframe with the trial (three columns with states, actions, and the rewards)
@@ -35,4 +35,4 @@ class ADPPolicyEvaluation(TrialBasedPolicyEvaluator):
         :return: a dictionary with a report of the step
         """
 
-        raise NotImplementedError
+      
